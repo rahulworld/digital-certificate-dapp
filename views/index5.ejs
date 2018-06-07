@@ -1,0 +1,37 @@
+<html>
+	<head>
+<!-- 		<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+   <script type=text/javascript src="/js/index.js"></script> -->
+<!-- 		<link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', filename='component.css') }}" />
+		<script type=text/javascript src="{{url_for('static', filename='modernizr.custom.js') }}"></script> -->
+		<title>Distributed Certificate Store App</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+	</head>
+<body class="container">
+  <h1>Distributed Certificate Store App</h1>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li ><a href="/">Issuer</a></li>
+      <li ><a href="/2">Verifier</a></li>
+    </ul>
+  </div>
+</nav>
+      <fieldset>
+        <h1>Invalid</h1>
+        <% if(invalid !== null){ %><h2><%= invalid %></h2><% } %>
+          <% if(error !== null){ %>
+            <p><%= error %></p>
+          <% } %>
+
+        <form id="myForm" enctype='application/json'>
+          <button type="button" onclick="window.location.href='/'" class="btn btn-primary" onclick="submitform()">Return to Issuer</button>
+          </form>
+      </fieldset>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+</html>

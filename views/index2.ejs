@@ -1,0 +1,34 @@
+<html>
+	<head>
+<!-- 		<link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', filename='css/style.css') }}" />
+   <script type=text/javascript src="{{url_for('static', filename='js/index.js') }}"></script> -->
+<!-- 		<link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', filename='component.css') }}" />
+		<script type=text/javascript src="{{url_for('static', filename='modernizr.custom.js') }}"></script> -->
+		<title>Distributed Certificate Store App</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+	</head>
+<body class="container">
+  <h1>Distributed Certificate Store App</h1>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li ><a href="/">Issuer</a></li>
+      <li class="active"><a href="#">Verifier</a></li>
+    </ul>
+  </div>
+</nav>
+
+<form id="myForm1" action="/4" method="post">
+  <div class="form-group">
+    <label for="enrollinput">Enroll/Degree No.</label>
+    <input name='SEnroll' type="Enroll" class="form-control" id="exampleInputEnroll" aria-describedby="Enroll" placeholder="Enroll">
+  </div>
+  <button type="submit" class="btn btn-primary" onclick="submitform()">Verify Certificate and Degree</button>
+  </form>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+</html>

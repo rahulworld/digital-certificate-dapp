@@ -1,0 +1,103 @@
+<html>
+	<head>
+<!-- 		<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+   <script type=text/javascript src="/js/index.js"></script> -->
+<!-- 		<link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', filename='component.css') }}" />
+		<script type=text/javascript src="{{url_for('static', filename='modernizr.custom.js') }}"></script> -->
+		<title>Distributed Certificate Store App</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+	</head>
+<body class="container">
+  <h1>Distributed Certificate Store App</h1>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li ><a href="/">Issuer</a></li>
+      <li ><a href="/2">Verifier</a></li>
+    </ul>
+  </div>
+</nav>
+      <fieldset>
+        <h1>Verified Certificate</h1>
+        <h2>Enroll :<h2>
+        <h2><% if(enroll !== null){ %><p><%= enroll %></p><% } %></h2>
+        <h2>Degree No. :<h2>
+        <h2><% if(degree_no !== null){ %><p><%= degree_no %></p><% } %></h2>
+        <span id="myDiv"></span>
+          <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Parameter</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Name</td>
+                <td><% if(name !== null){ %><p><%= name %></p><% } %></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Branch</td>
+                <td><% if(branch !== null){ %><p><%= branch %></p><% } %></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                 <td>CGPA</td>
+                <td><% if(cgpa !== null){ %><p><%= cgpa %></p><% } %></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Email</td>
+                <td><% if(email !== null){ %><p><%= email %></p><% } %></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>Issuer</td>
+                <td><% if(issuer !== null){ %><p><%= issuer %></p><% } %></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Pass Out</td>
+                <td><% if(datetime !== null){ %><p><%= datetime %></p><% } %></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Previous Hash</td>
+                <td><% if(prehash !== null){ %><p><%= prehash %></p><% } %></td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td>Time Stamp</td>
+                <td><% if(timestamp !== null){ %><p><%= timestamp %></p><% } %></td>
+              </tr>
+              <tr>
+                <th scope="row">11</th>
+                <td>Hash</td>
+                <td><% if(hash !== null){ %><p><%= hash %></p><% } %></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <% if(error !== null){ %>
+            <p><%= error %></p>
+          <% } %>
+          <script type="text/javascript">
+            // console.log(block);
+          </script>
+
+        <form id="myForm" enctype='application/json'>
+          <button type="button" onclick="window.location.href='/'" class="btn btn-primary" onclick="submitform()">Return to Issuer Page</button>
+            <button type="button" onclick="window.location.href='/blocks'" class="btn btn-primary" onclick="submitform()">Blocks</button>
+            <button type="button" onclick="window.location.href='/peers'"class="btn btn-primary" onclick="submitform()">Peers</button>
+          </form>
+      </fieldset>
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+</html>

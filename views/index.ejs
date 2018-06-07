@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Distributed Certificate Store App</title>
+  <!-- <link rel="stylesheet" type="text/css" media="all" href="{{ url_for('static', filename='css/style.css') }}" />
+   <script type=text/javascript src="{{url_for('static', filename='js/index.js') }}"></script> -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.serializeJSON/2.9.0/jquery.serializejson.min.js"></script>
+    
+
+
+</head>
+
+<body class="container">
+  <h1>Distributed Certificate Store App</h1>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Issuer</a></li>
+      <li><a href="/2">Verifier</a></li>
+      <!-- <li><a href="{{ url_for('index2') }}"><button  class="buttoon mdl-button  mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Find Lawfirms
+</button></a></li> -->
+    </ul>
+  </div>
+</nav>
+
+<!-- <form enctype='application/json' id="myForm" type="post"> -->
+<form id="myForm" action="/3" method="post">
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Full Name</label>
+      <div class="col-10">
+        <input name='name' class="form-control" type="text" id="name_input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-search-input" class="col-2 col-form-label">Enroll</label>
+      <div class="col-10">
+        <input name='enroll' class="form-control" type="text" id="enroll_input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-number-input" class="col-2 col-form-label">Degree No</label>
+      <div class="col-10">
+        <input name='degree_no' class="form-control" type="number" value="456465" id="degree_input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-email-input" class="col-2 col-form-label">Branch</label>
+      <div class="col-10">
+        <input name='branch' class="form-control" type="text" value="CSE" id="branch_input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-url-input" class="col-2 col-form-label">CGPA</label>
+      <div class="col-10">
+        <input name='cgpa' class="form-control" type="number" value="8.0" id="cgpa_input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-tel-input" class="col-2 col-form-label">Email</label>
+      <div class="col-10">
+        <input name='email' class="form-control" type="email" value="rahul.nitsxr@gmail.com" id="email_input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-password-input" class="col-2 col-form-label">Issuer Name/ID/Sign</label>
+      <div class="col-10">
+        <input name='mobile' class="form-control" type="text" value="CSE Department" id="issuer_input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-datetime-local-input" class="col-2 col-form-label">Pass Out Time</label>
+      <div class="col-10">
+        <input name='datetime' class="form-control" type="datetime-local" value="2018-04-09T20:00:00" id="datetime_input">
+      </div>
+    </div>
+<!-- <button type="submit" class="btn btn-primary" value="Submit" >Sign in</button> -->
+<!-- <button type="button" class="btn btn-primary" onclick="submitform()">Get JSON</button> -->
+<!-- <script type=text/javascript src="{{url_for('static', filename='js/index.js') }}"></script> -->
+<button type="submit" class="btn btn-primary" onclick="submitform()">Issue Certificate</button>
+<!-- <script type="text/javascript">
+  // var formData;
+  //   function submitform(){
+  //     // formData = JSON.stringify($("#myForm").serializeArray());
+  //     // console.log(formData);
+
+  //     var jsonData = {};
+  //      var formData = $("#myForm").serializeArray();
+  //      $.each(formData, function() {
+  //      if (jsonData[this.name]) {
+  //      if (!jsonData[this.name].push) {
+  //      jsonData[this.name] = [jsonData[this.name]];
+  //      }
+  //      jsonData[this.name].push(this.value || '');
+  //      } else {
+  //      jsonData[this.name] = this.value || '';
+  //      }
+
+  //      });
+  //     document.getElementById("myDiv").textContent=jsonData;
+  //      console.log(jsonData);
+  //   }
+//   function IssueCertificate(){
+//   var Name = document.getElementById("name_input").value;
+//   var enroll = document.getElementById("enroll_input").value;
+//   var cgpa = document.getElementById("cgpa_input").value;
+//   var degree = document.getElementById("degree_input").value;
+//   var branch = document.getElementById("branch_input").value;
+//   var email = document.getElementById("email_input").value;
+//   var IssuerId = document.getElementById("issuer_input").value;
+//   var datetime = document.getElementById("datetime_input").value;
+//   console.log(datetime);
+
+//   $("#CertificateHash").html(token.toString());
+//   console.log(token);
+//   console.log("Certificate Issued");
+// }
+</script> -->
+</form>
+<!-- <p id="myDiv"></p> -->
+<!-- <h3>JSON String</h3>
+<span id="myDiv"> </span>
+  <br>
+  <h3>Transaction Certificate Hash:</h3>
+  <p id="CertificateHash" style="font-size:20px">No Certificate Issued</p> -->
+
+
+<!-- 
+    <div id="w">
+    <div id="content">
+      <h1>Law Information System</h1>
+      <p>Information which u can search about Law</p>
+
+      <div id="searchfield">
+        <form><input type="text" class="biginput" id="autocomplete"></form>
+      </div>
+
+      <div id="outputbox">
+        <p id="outputcontent">Output will be displayed here</p>
+      </div>
+    </div>
+  </div>
+  <div class="center">
+<a href="{{ url_for('index2') }}"><button  class="buttoon mdl-button  mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Find Lawfirms
+</button></a>
+
+<a href="{{ url_for('index3') }}"><button  class="buttoon mdl-button  mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Create Your Account
+</button></a>
+</br>
+</br>
+
+<a href="{{ url_for('find_template') }}"><button  class="buttoon mdl-button  mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Get Pre-maid Legal Contracts
+</button></a>
+</div> -->
+</body>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script type=text/javascript src="{{url_for('static', filename='js/index.js') }}"></script>
+<!-- <script src="./index.js"></script> -->
+</html>
