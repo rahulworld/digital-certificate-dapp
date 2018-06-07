@@ -4,7 +4,7 @@ const request = require('request');
 var CryptoJS = require("crypto-js");
 var WebSocket = require("ws");
 
-var http_port = process.env.HTTP_PORT || 3001;
+var http_port = process.env.HTTP_PORT || 3000;
 var p2p_port = process.env.P2P_PORT || 6001;
 var initialPeers = process.env.PEERS ? process.env.PEERS.split(',') : [];
 var peer_address="ws://localhost:6001";
@@ -63,22 +63,22 @@ var initHttpServer = () => {
     });
 
     app.post('/', function (req, res) {
-      let city = req.body.city;
-      let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+      // let city = req.body.city;
+      // let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
-      request(url, function (err, response, body) {
-        if(err){
-          res.render('index', {weather: null, error: 'Error, please try again'});
-        } else {
-          let weather = JSON.parse(body)
-          if(weather.main == undefined){
-            res.render('index', {weather: null, error: 'Error, please try again'});
-          } else {
-            let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-            res.render('index', {weather: weatherText, error: null});
-          }
-        }
-      });
+      // request(url, function (err, response, body) {
+      //   if(err){
+      //     res.render('index', {weather: null, error: 'Error, please try again'});
+      //   } else {
+      //     let weather = JSON.parse(body)
+      //     if(weather.main == undefined){
+      //       res.render('index', {weather: null, error: 'Error, please try again'});
+      //     } else {
+      //       let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+      //       res.render('index', {weather: weatherText, error: null});
+      //     }
+      //   }
+      // });
     });
      app.post('/3', function (req, res){
       var data1={};
