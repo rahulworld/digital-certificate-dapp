@@ -5,9 +5,9 @@ var CryptoJS = require("crypto-js");
 var WebSocket = require("ws");
 
 var http_port = process.env.HTTP_PORT || 3000;
-var p2p_port = process.env.P2P_PORT || 6001;
-var initialPeers = process.env.PEERS ? process.env.PEERS.split(',') : [];
-var peer_address="ws://localhost:6001";
+// var p2p_port = process.env.P2P_PORT || 6001;
+// var initialPeers = process.env.PEERS ? process.env.PEERS.split(',') : [];
+// var peer_address="ws://localhost:6001";
 
 var name, enroll, email, degree_no, cgpa, datetime, issuer, email;
 var data={};
@@ -156,7 +156,7 @@ var initHttpServer = () => {
       var count=0;
 
       var found={};
-      for(var i=1;i<=obj.length;i++){
+      for(var i=1;i<obj.length;i++){
           if(SEnroll===obj[i]['data'].enroll){
             // found=obj[i];
             found=obj[i];
@@ -375,8 +375,8 @@ var responseLatestMsg = () => ({
 var write = (ws, message) => ws.send(JSON.stringify(message));
 var broadcast = (message) => sockets.forEach(socket => write(socket, message));
 
-connectToPeers(initialPeers);
+// connectToPeers(initialPeers);
 initHttpServer();
-initP2PServer();
+// initP2PServer();
 
 
