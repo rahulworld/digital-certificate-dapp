@@ -222,17 +222,17 @@ var initHttpServer = () => {
           res.send();
       });
   // app.listen(http_port, () => console.log('Listening http on port: ' + http_port));
-  // };
   app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
+  };
 
-// var initP2PServer = () => {
-//     var server = new WebSocket.Server({port: p2p_port});
-//     server.on('connection', ws => initConnection(ws));
-//     console.log('listening websocket p2p port on: ' + p2p_port);
+var initP2PServer = () => {
+    var server = new WebSocket.Server({port: p2p_port});
+    server.on('connection', ws => initConnection(ws));
+    console.log('listening websocket p2p port on: ' + p2p_port);
 
-// };
+};
 
 var initConnection = (ws) => {
     sockets.push(ws);
