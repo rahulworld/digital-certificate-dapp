@@ -1,6 +1,7 @@
 {
   "name": "certi",
   "version": "1.0.0",
+  "author":"Rahul Chauhan(rahulnitsxr@gmail.com)",
   "description": "",
   "main": "index.js",
   "scripts": {
