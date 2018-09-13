@@ -1,5 +1,5 @@
 # digital-certificate-dapp
-![npm](https://img.shields.io/npm/v/:scope/:package.svg)
+![npm8.x](https://img.shields.io/npm/v/:scope/:package.svg)
 
 [Demo application](https://digital-certificate-dapp.herokuapp.com/)
 
