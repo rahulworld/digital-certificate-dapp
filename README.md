@@ -1,7 +1,5 @@
 # digital-certificate-dapp
-![python3.x](https://img.shields.io/badge/python-3.x-brightgreen.svg)
-
-<!-- [Implemented OAT methods](https://github.com/rahulworld/Data-analysis/blob/master/examples/README.md) -->
+![npm](https://img.shields.io/npm/v/:scope/:package.svg)
 
 [Demo application](https://digital-certificate-dapp.herokuapp.com/)
 
@@ -15,7 +13,7 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
 git clone https://github.com/rahulworld/digital-certificate-dapp.git
 cd digital-certificate-dapp
 npm install
-node server.js
+npm start
 ```
 
 Your app should now be running on [localhost:3000](http://localhost:3000/).
